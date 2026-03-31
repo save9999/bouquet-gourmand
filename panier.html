@@ -21,9 +21,17 @@
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'DM Sans',sans-serif; color:var(--texte); background:var(--blanc); }
 
-/* HEADER */
-.header { background:linear-gradient(135deg,var(--rose) 0%,var(--rose-fonce) 100%); padding:40px 20px; text-align:center; color:white; }
-.header h1 { font-family:'Playfair Display',serif; font-size:42px; margin:0; }
+/* HERO */
+.deco { position:absolute; opacity:0.1; pointer-events:none; }
+.deco1 { width:300px; height:300px; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23c8607a" stroke-width="2"/></svg>'); top:-50px; left:-50px; }
+.deco2 { width:250px; height:250px; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q90,50 50,90 Q10,50 50,10" fill="none" stroke="%23c8607a" stroke-width="2"/></svg>'); bottom:-30px; right:-30px; }
+.hero { padding:90px 20px; background:linear-gradient(135deg,var(--rose-pale) 0%,#f5dce5 100%); text-align:center; position:relative; overflow:hidden; }
+.hero-tag { font-size:13px; color:var(--rose-fonce); letter-spacing:1px; margin-bottom:20px; }
+.hero h1 { font-family:'Playfair Display',serif; font-size:64px; font-weight:400; margin:0; }
+.hero h1 em { font-style:italic; }
+.hero-sub { font-size:18px; color:var(--texte); margin:15px 0 40px; }
+.hero-cta { display:inline-block; padding:14px 40px; background:var(--rose-fonce); color:white; border-radius:30px; font-weight:500; transition:all 0.3s; }
+.hero-cta:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(200,96,122,0.3); }
 
 /* CONTAINER */
 .container { max-width:1000px; margin:0 auto; padding:40px 20px; }
@@ -75,23 +83,13 @@ footer { background:var(--chocolat); color:white; padding:40px 20px; text-align:
 </head>
 <body>
 
-<style>
-.deco { position:absolute; opacity:0.1; pointer-events:none; }
-.deco1 { width:300px; height:300px; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23c8607a" stroke-width="2"/></svg>'); top:-50px; left:-50px; }
-.deco2 { width:250px; height:250px; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q90,50 50,90 Q10,50 50,10" fill="none" stroke="%23c8607a" stroke-width="2"/></svg>'); bottom:-30px; right:-30px; }
-.hero { padding:90px 20px; background:linear-gradient(135deg,#fde8ee 0%,#f5dce5 100%); text-align:center; position:relative; overflow:hidden; }
-.hero-tag { font-size:13px; color:#c8607a; letter-spacing:1px; margin-bottom:20px; display:block; }
-.hero h1 { font-family:'Playfair Display',serif; font-size:64px; font-weight:400; margin:0; }
-.hero h1 em { font-style:italic; }
-.hero-sub { font-size:18px; color:#6b3d35; margin:15px 0; }
-</style>
-
 <section class="hero">
 <div class="deco deco1"></div>
 <div class="deco deco2"></div>
 <span class="hero-tag">🌸 Paris & Île-de-France · Fait à la main</span>
 <h1>Bouquet<br><em>Gourmand</em></h1>
 <p class="hero-sub">Des fleurs… qui se dégustent</p>
+<a href="/" class="hero-cta">Découvrez nos compositions</a>
 </section>
 
 <div class="container">
