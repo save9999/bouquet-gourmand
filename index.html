@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bouquet Gourmand — Des fleurs qui se dégustent — v2.1</title>
+<title>Bouquet Gourmand — Des fleurs qui se dégustent — v3.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -19,7 +21,34 @@
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 html { scroll-behavior:smooth; }
-body { background:var(--blanc); font-family:'DM Sans',sans-serif; color:var(--chocolat); overflow-x:hidden; }
+body { background:var(--blanc); font-family:'DM Sans',sans-serif; color:var(--chocolat); overflow-x:hidden; -webkit-font-smoothing:antialiased; }
+
+/* ── NAV STICKY ── */
+.site-nav {
+  position:fixed; top:0; left:0; right:0; z-index:50;
+  backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  background:rgba(255,250,248,0.85);
+  border-bottom:1px solid rgba(232,160,176,0.15);
+  padding:0 24px; height:56px;
+  display:flex; align-items:center; justify-content:space-between;
+}
+.nav-brand { font-family:'Playfair Display',serif; font-size:18px; font-weight:500; font-style:italic; color:var(--chocolat); text-decoration:none; }
+.nav-links { display:flex; gap:20px; align-items:center; }
+.nav-links a { font-size:11px; font-weight:400; letter-spacing:3px; text-transform:uppercase; color:var(--texte-light); text-decoration:none; transition:color 0.2s; }
+.nav-links a:hover { color:var(--rose-fonce); }
+.nav-cta-btn { background:var(--rose-fonce); color:#fff !important; padding:8px 20px; border-radius:50px; letter-spacing:2px !important; transition:all 0.3s !important; }
+.nav-cta-btn:hover { background:#b04060; color:#fff !important; transform:translateY(-1px); }
+@media(max-width:600px){ .nav-links { display:none; } }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity:0; transform:translateY(24px); transition:opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* ── TESTIMONIAL ── */
+.testimonial { padding:80px 24px; background:var(--beige); text-align:center; }
+.testimonial blockquote { font-family:'Playfair Display',serif; font-size:clamp(20px,4vw,30px); font-style:italic; font-weight:400; line-height:1.5; color:var(--chocolat); max-width:600px; margin:0 auto 20px; }
+.testimonial cite { font-size:13px; color:var(--texte-light); font-style:normal; }
+.testimonial .stars { color:var(--or); font-size:16px; letter-spacing:2px; margin-bottom:16px; }
 
 .hero {
 min-height:100vh;
@@ -27,7 +56,7 @@ background: radial-gradient(ellipse at 20% 80%, rgba(232,160,176,0.35) 0%, trans
 radial-gradient(ellipse at 80% 20%, rgba(249,240,235,0.8) 0%, transparent 50%),
 linear-gradient(160deg, #fce4ec 0%, #fdf0f4 40%, #fff8f5 100%);
 display:flex; flex-direction:column; align-items:center; justify-content:center;
-text-align:center; padding:80px 20px 60px; position:relative; overflow:hidden;
+text-align:center; padding:100px 20px 60px; position:relative; overflow:hidden;
 }
 .deco { position:absolute; border-radius:50%; pointer-events:none; }
 .deco1 { width:500px; height:500px; background:radial-gradient(circle, rgba(232,160,176,0.18), transparent 70%); top:-100px; right:-100px; animation:float 8s ease-in-out infinite; }
@@ -64,8 +93,8 @@ text-align:center; padding:80px 20px 60px; position:relative; overflow:hidden;
 .prix-unit { font-size:12px; color:var(--texte-light); font-weight:300; margin-bottom:20px; display:block; }
 .prix-details { font-size:12px; font-weight:300; color:var(--texte-light); line-height:2; list-style:none; }
 .prix-details li::before { content:'🌸 '; font-size:10px; }
-.btn-panier { background:var(--rose-fonce); color:#fff; border:none; padding:12px 24px; border-radius:50px; font-size:12px; font-weight:400; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all 0.3s; margin-top:20px; }
-.btn-panier:hover { background:#b04060; transform:translateY(-2px); }
+.btn-panier { background:var(--rose-fonce); color:#fff; border:none; padding:12px 24px; border-radius:50px; font-size:12px; font-weight:400; letter-spacing:2px; text-transform:uppercase; cursor:pointer; transition:all 0.3s; margin-top:20px; font-family:'DM Sans',sans-serif; }
+.btn-panier:hover { background:#b04060; transform:translateY(-2px); box-shadow:0 6px 20px rgba(200,96,122,0.25); }
 
 .occasions { padding:90px 20px; max-width:1100px; margin:0 auto; }
 .occasions h2 { font-family:'Playfair Display',serif; font-size:clamp(30px,5vw,48px); font-weight:400; text-align:center; margin-bottom:52px; }
@@ -107,12 +136,17 @@ text-align:center; padding:80px 20px 60px; position:relative; overflow:hidden;
 .success-message { background:linear-gradient(160deg, #c8f0dd, #e8f8f0); padding:30px; border-radius:16px; text-align:center; margin-top:40px; }
 .success-message h3 { color:#2d5a47; margin-bottom:10px; }
 
-footer { background:var(--chocolat); padding:44px 20px; text-align:center; color:#fff; }
+footer { background:var(--chocolat); padding:52px 20px 36px; text-align:center; color:#fff; }
 .f-brand { font-family:'Playfair Display',serif; font-size:26px; font-style:italic; margin-bottom:6px; }
-.f-tag { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--or); }
+.f-tag { font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--or); margin-bottom:20px; display:block; }
+.f-links { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+.f-links a { font-size:11px; color:rgba(255,255,255,0.4); text-decoration:none; transition:color 0.2s; letter-spacing:1px; }
+.f-links a:hover { color:#fff; }
+.f-copy { font-size:10px; color:rgba(255,255,255,0.25); margin-top:20px; }
 
-.panier-icon { position:fixed; bottom:20px; right:20px; background:var(--rose-fonce); color:#fff; width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:28px; cursor:pointer; box-shadow:0 4px 20px rgba(200,96,122,0.3); z-index:999; }
-.panier-count { position:absolute; top:-8px; right:-8px; background:#fff; color:var(--rose-fonce); width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:600; }
+.panier-icon { position:fixed; bottom:20px; right:20px; background:var(--rose-fonce); color:#fff; width:56px; height:56px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; cursor:pointer; box-shadow:0 4px 20px rgba(200,96,122,0.3); z-index:999; transition:all 0.3s; }
+.panier-icon:hover { background:#b04060; transform:translateY(-2px); box-shadow:0 8px 28px rgba(200,96,122,0.4); }
+.panier-count { position:absolute; top:-6px; right:-6px; background:var(--chocolat); color:#fff; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:600; }
 
 .popup-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.4); z-index:1000; align-items:center; justify-content:center; }
 .popup-overlay.active { display:flex; }
@@ -133,6 +167,17 @@ footer { background:var(--chocolat); padding:44px 20px; text-align:center; color
 </head>
 <body>
 
+<!-- NAV -->
+<nav class="site-nav">
+  <a href="#" class="nav-brand">Bouquet Gourmand</a>
+  <div class="nav-links">
+    <a href="#prix">Bouquets</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#occasions">Occasions</a>
+    <a href="/panier.html" class="nav-cta-btn">Commander</a>
+  </div>
+</nav>
+
 <!-- PAGE ACCUEIL -->
 <div id="accueil">
 
@@ -147,7 +192,7 @@ footer { background:var(--chocolat); padding:44px 20px; text-align:center; color
 </section>
 
 <!-- INTRO -->
-<section class="intro">
+<section class="intro reveal">
 <span class="section-label">L'art du cadeau unique</span>
 <h2>Quand le chocolat<br>devient une fleur</h2>
 <div class="divider"></div>
@@ -225,7 +270,7 @@ footer { background:var(--chocolat); padding:44px 20px; text-align:center; color
 </section>
 
 <!-- GALERIE PHOTOS HD -->
-<section style="padding:90px 20px; background:#fafaf8;">
+<section id="galerie" class="reveal" style="padding:90px 20px; background:#fafaf8;">
 <div style="max-width:1200px; margin:0 auto;">
 <span class="section-label">Nos créations</span>
 <h2 style="font-family:'Playfair Display',serif; font-size:clamp(30px,5vw,48px); font-weight:400; text-align:center; margin-bottom:52px;">Regardez comment sont nos fleurs</h2>
@@ -249,7 +294,7 @@ Chaque fleur est façonnée à la main avec du chocolat fondant et raffiné. Les
 </section>
 
 <!-- OCCASIONS -->
-<section class="occasions">
+<section class="occasions reveal" id="occasions">
 <span class="section-label">Pour chaque moment</span>
 <h2>L'émotion parfaite,<br>pour chaque occasion</h2>
 <div class="occ-grid">
@@ -262,10 +307,24 @@ Chaque fleur est façonnée à la main avec du chocolat fondant et raffiné. Les
 </div>
 </section>
 
+<!-- TESTIMONIAL -->
+<section class="testimonial reveal">
+  <div class="stars">★★★★★</div>
+  <blockquote>"Un cadeau magnifique. Ma mère a pleuré de joie en découvrant que les roses étaient en chocolat. On en reparle encore."</blockquote>
+  <cite>— Samira K., Paris 11e</cite>
+</section>
+
 <!-- FOOTER -->
 <footer>
 <div class="f-brand">Bouquet Gourmand</div>
 <span class="f-tag">La gourmandise qui fleurit vos fêtes</span>
+<div class="f-links">
+  <a href="#">Confidentialité</a>
+  <a href="#">CGV</a>
+  <a href="#">Contact</a>
+  <a href="#">Instagram</a>
+</div>
+<p class="f-copy">© 2026 Bouquet Gourmand · Paris & Île-de-France</p>
 </footer>
 
 <!-- ICONE PANIER FLOTTANT -->
@@ -287,6 +346,17 @@ Chaque fleur est façonnée à la main avec du chocolat fondant et raffiné. Les
 </div>
 
 <script>
+// Scroll reveal
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
 let panier = JSON.parse(localStorage.getItem('panier')) || [];
 
 
