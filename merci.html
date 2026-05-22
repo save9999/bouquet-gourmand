@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merci - Bouquet Gourmand</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+:root {
+--rose-fonce: #c8607a;
+--rose-pale: #fde8ee;
+--chocolat: #4a2820;
+--blanc: #fffaf8;
+--texte: #6b3d35;
+--texte-light: #a06b60;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:'DM Sans',sans-serif; color:var(--texte); background:linear-gradient(135deg,var(--rose-pale) 0%,#f5dce5 100%); min-height:100vh; display:flex; align-items:center; justify-content:center; padding:40px 20px; }
+.card { background:#fff; border-radius:20px; padding:60px 40px; max-width:560px; text-align:center; box-shadow:0 10px 40px rgba(200,96,122,0.15); }
+.emoji { font-size:72px; margin-bottom:24px; }
+h1 { font-family:'Playfair Display',serif; font-size:48px; font-weight:400; margin-bottom:16px; color:var(--chocolat); }
+p { color:var(--texte-light); font-size:16px; line-height:1.6; margin-bottom:32px; }
+.cta { display:inline-block; padding:14px 36px; background:var(--rose-fonce); color:#fff; border-radius:30px; font-weight:500; text-decoration:none; transition:all 0.3s; }
+.cta:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(200,96,122,0.3); }
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="emoji">✨</div>
+  <h1>Merci !</h1>
+  <p>Votre commande est confirmée. Vous recevrez un email avec les détails dans quelques instants. Notre équipe vous contactera pour confirmer la livraison en Île-de-France.</p>
+  <a href="/" class="cta">Retour aux compositions</a>
+</div>
+</body>
+</html>

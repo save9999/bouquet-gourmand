@@ -2,5 +2,8 @@
   "name": "bouquet-gourmand",
   "version": "1.0.0",
   "description": "Bouquet Gourmand - E-commerce de bouquets en chocolat",
-  "author": "Bouquet Gourmand"
+  "author": "Bouquet Gourmand",
+  "dependencies": {
+    "stripe": "^17.7.0"
+  }
 }

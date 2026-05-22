@@ -17,11 +17,8 @@
 --texte: #6b3d35;
 --texte-light: #a06b60;
 }
-
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family:'DM Sans',sans-serif; color:var(--texte); background:var(--blanc); }
-
-/* HERO */
 .deco { position:absolute; opacity:0.1; pointer-events:none; }
 .deco1 { width:300px; height:300px; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23c8607a" stroke-width="2"/></svg>'); top:-50px; left:-50px; }
 .deco2 { width:250px; height:250px; background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,10 Q90,50 50,90 Q10,50 50,10" fill="none" stroke="%23c8607a" stroke-width="2"/></svg>'); bottom:-30px; right:-30px; }
@@ -30,21 +27,13 @@ body { font-family:'DM Sans',sans-serif; color:var(--texte); background:var(--bl
 .hero h1 { font-family:'Playfair Display',serif; font-size:64px; font-weight:400; margin:0; }
 .hero h1 em { font-style:italic; }
 .hero-sub { font-size:18px; color:var(--texte); margin:15px 0 40px; }
-.hero-cta { display:inline-block; padding:14px 40px; background:var(--rose-fonce); color:white; border-radius:30px; font-weight:500; transition:all 0.3s; }
+.hero-cta { display:inline-block; padding:14px 40px; background:var(--rose-fonce); color:white; border-radius:30px; font-weight:500; transition:all 0.3s; text-decoration:none; }
 .hero-cta:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(200,96,122,0.3); }
-
-/* CONTAINER */
 .container { max-width:1000px; margin:0 auto; padding:40px 20px; }
-
-/* BACK LINK */
 .back-link { display:inline-flex; align-items:center; gap:8px; color:var(--rose-fonce); cursor:pointer; font-weight:500; margin-bottom:30px; transition:all 0.3s; }
 .back-link:hover { gap:12px; }
-
-/* PANIER VIDE */
 .panier-vide { text-align:center; padding:60px 20px; color:var(--texte-light); }
 .panier-vide p { font-size:16px; margin-bottom:20px; }
-
-/* PANIER ITEMS */
 .panier-items { margin:30px 0; }
 .panier-item { display:flex; justify-content:space-between; align-items:center; padding:16px; background:#fff; border-bottom:1px solid var(--rose-pale); }
 .item-details h3 { font-size:16px; margin:0 0 4px; }
@@ -52,30 +41,22 @@ body { font-family:'DM Sans',sans-serif; color:var(--texte); background:var(--bl
 .item-price { font-size:18px; font-weight:bold; color:var(--rose-fonce); }
 .btn-supprimer { background:#ff6b6b; color:white; border:none; padding:8px 12px; border-radius:6px; cursor:pointer; font-weight:500; }
 .btn-supprimer:hover { background:#ff5252; }
-
-/* RÉCAPITULATIF */
 .recap { background:var(--beige); padding:24px; border-radius:12px; margin:30px 0; }
 .recap-line { display:flex; justify-content:space-between; padding:10px 0; }
-.recap-total { font-size:24px; font-weight:bold; color:var(--chocolat); margin-top:16px; padding-top:16px; border-top:2px solid var(--rose); }
-
-/* FORMULAIRE */
+.recap-total { font-size:24px; font-weight:bold; color:var(--chocolat); margin-top:16px; padding-top:16px; border-top:2px solid var(--rose); display:flex; justify-content:space-between; }
 .form-section { background:#fff; padding:24px; border-radius:12px; margin:30px 0; }
 .form-section h3 { font-size:18px; margin-bottom:16px; font-family:'Playfair Display',serif; }
 .form-group { margin:16px 0; }
 .form-group label { display:block; font-weight:500; margin-bottom:6px; font-size:13px; }
 .form-group input, .form-group textarea { width:100%; padding:12px; border:1px solid var(--rose-pale); border-radius:8px; font-family:'DM Sans',sans-serif; font-size:14px; }
 .form-group textarea { resize:vertical; }
-
-/* BOUTON CHECKOUT */
 .btn-checkout { width:100%; padding:14px; background:var(--chocolat); color:white; border:none; border-radius:8px; font-weight:500; cursor:pointer; font-size:16px; margin-top:20px; transition:all 0.3s; }
 .btn-checkout:hover { background:var(--rose-fonce); }
 .btn-checkout:disabled { opacity:0.5; cursor:not-allowed; }
-
-/* SUCCESS */
+.error-msg { display:none; margin-top:16px; padding:14px; background:#fde8ee; border-left:4px solid var(--rose-fonce); color:var(--chocolat); border-radius:6px; }
 .success-msg { display:none; margin-top:20px; padding:20px; background:#d4edda; border-radius:8px; color:#155724; text-align:center; }
 .success-msg h3 { margin-bottom:8px; }
-
-/* FOOTER */
+.mandate-text { font-size:11px; color:var(--texte-light); margin-top:10px; line-height:1.5; }
 footer { background:var(--chocolat); color:white; padding:40px 20px; text-align:center; margin-top:60px; }
 .f-brand { font-family:'Playfair Display',serif; font-size:24px; margin-bottom:8px; }
 .f-tag { font-size:13px; color:#ddd; }
@@ -93,86 +74,52 @@ footer { background:var(--chocolat); color:white; padding:40px 20px; text-align:
 </section>
 
 <div class="container">
-
 <div class="back-link" onclick="window.location.href='/';">
-<span>←</span>
-<span>Retour aux compositions</span>
+<span>←</span><span>Retour aux compositions</span>
 </div>
 
 <h2 style="font-family:'Playfair Display',serif; font-size:32px; margin-bottom:30px;">Votre panier</h2>
 
-<!-- PANIER VIDE -->
 <div class="panier-vide" id="panier-vide">
 <p>Votre panier est vide</p>
 <p style="font-size:14px;">Retournez aux compositions pour ajouter des articles!</p>
 </div>
 
-<!-- PANIER ITEMS -->
 <div id="panier-contenu" style="display:none;">
 <div class="panier-items" id="panier-items"></div>
 
-<!-- RÉCAPITULATIF -->
 <div class="recap">
-<div class="recap-line">
-<span>Sous-total</span>
-<strong id="subtotal">0 €</strong>
+<div class="recap-line"><span>Sous-total</span><strong id="subtotal">0 €</strong></div>
+<div class="recap-line"><span>Livraison (Île-de-France)</span><strong>5 €</strong></div>
+<div class="recap-total"><span>TOTAL</span><strong id="total">5 €</strong></div>
 </div>
-<div class="recap-line">
-<span>Livraison (Île-de-France)</span>
-<strong>5 €</strong>
-</div>
-<div class="recap-total">
-<span>TOTAL</span>
-<strong id="total">5 €</strong>
-</div>
-</div>
-
-<!-- FORMULAIRE -->
-<form id="checkout-form">
 
 <div class="form-section">
 <h3>Vos informations</h3>
-
-<div class="form-group">
-<label>Nom complet *</label>
-<input type="text" id="name" placeholder="Votre nom" required>
+<div class="form-group"><label>Nom complet *</label><input type="text" id="name" placeholder="Votre nom" required></div>
+<div class="form-group"><label>Email *</label><input type="email" id="email" placeholder="votre@email.com" required></div>
+<div class="form-group"><label>Téléphone *</label><input type="tel" id="phone" placeholder="+33 6 XX XX XX XX" required></div>
+<div class="form-group"><label>Adresse de livraison *</label><textarea id="address" rows="3" required></textarea></div>
 </div>
 
-<div class="form-group">
-<label>Email *</label>
-<input type="email" id="email" placeholder="votre@email.com" required>
-</div>
-
-<div class="form-group">
-<label>Téléphone *</label>
-<input type="tel" id="phone" placeholder="+33 6 XX XX XX XX" required>
-</div>
-
-<div class="form-group">
-<label>Adresse de livraison *</label>
-<textarea id="address" rows="3" required></textarea>
-</div>
-</div>
-
+<div id="payment-section" style="display:none;">
 <div class="form-section">
 <h3>Paiement</h3>
-<div class="form-group">
-<label>Numéro de carte *</label>
-<div id="card-element" style="padding:12px; border:1px solid var(--rose-pale); border-radius:8px;"></div>
+<div id="payment-element"></div>
+<p class="mandate-text">En validant votre commande, vous autorisez Bouquet Gourmand à débiter votre carte du montant total ci-dessus. Paiement sécurisé par Stripe.</p>
 </div>
+<button type="button" class="btn-checkout" id="confirm-btn" onclick="confirmerPaiement()">Valider et payer · <span id="btn-total">5 €</span></button>
 </div>
 
-<button type="button" class="btn-checkout" id="checkout-btn" onclick="traiterPaiement()">Valider la commande · <span id="btn-total">5 €</span></button>
+<button type="button" class="btn-checkout" id="continue-btn" onclick="continuerVersPaiement()">Continuer vers le paiement · <span id="btn-total-cont">5 €</span></button>
 
+<div class="error-msg" id="error-msg"></div>
 <div class="success-msg" id="success-msg">
 <h3>✨ Commande validée!</h3>
 <p>Merci pour votre achat. Vous recevrez un email de confirmation.</p>
 </div>
 
-</form>
-
 </div>
-
 </div>
 
 <footer>
@@ -181,96 +128,149 @@ footer { background:var(--chocolat); color:white; padding:40px 20px; text-align:
 </footer>
 
 <script>
-// Charger panier depuis localStorage
+const STRIPE_PK = "pk_live_51TXtBO2IrCzapvsB9HWIy9a7JzPr9XFGv3vayBIptf8I0D7QAbxSnOLffToqfDzs5GaxcHMnPVumyTPlfo5DBkcp00vaEptJmJ";
+const stripe = Stripe(STRIPE_PK);
 let panier = JSON.parse(localStorage.getItem('panier')) || [];
+let elementsInstance = null;
+let paymentElement = null;
+let clientSecret = null;
 
-const stripe = Stripe('pk_test_TuyStub1234567890');
-const elements = stripe.elements();
-const cardElement = elements.create('card');
-cardElement.mount('#card-element');
-
-// Afficher panier
 function afficherPanier() {
-const panierVide = document.getElementById('panier-vide');
-const panierContenu = document.getElementById('panier-contenu');
-const itemsList = document.getElementById('panier-items');
-
-if (panier.length === 0) {
-panierVide.style.display = 'block';
-panierContenu.style.display = 'none';
-return;
+  const panierVide = document.getElementById('panier-vide');
+  const panierContenu = document.getElementById('panier-contenu');
+  const itemsList = document.getElementById('panier-items');
+  if (panier.length === 0) {
+    panierVide.style.display = 'block';
+    panierContenu.style.display = 'none';
+    return;
+  }
+  panierVide.style.display = 'none';
+  panierContenu.style.display = 'block';
+  itemsList.innerHTML = '';
+  let subtotal = 0;
+  panier.forEach((item, idx) => {
+    subtotal += item.price;
+    itemsList.innerHTML += `
+      <div class="panier-item">
+        <div class="item-details">
+          <h3>${escapeHtml(item.name)}</h3>
+          <p>${item.price.toFixed(2)} €</p>
+        </div>
+        <button class="btn-supprimer" onclick="supprimerItem(${idx})">Supprimer</button>
+      </div>`;
+  });
+  const total = subtotal + 5;
+  document.getElementById('subtotal').textContent = subtotal.toFixed(2) + ' €';
+  document.getElementById('total').textContent = total.toFixed(2) + ' €';
+  document.getElementById('btn-total').textContent = total.toFixed(2) + ' €';
+  document.getElementById('btn-total-cont').textContent = total.toFixed(2) + ' €';
 }
 
-panierVide.style.display = 'none';
-panierContenu.style.display = 'block';
-itemsList.innerHTML = '';
-let subtotal = 0;
-
-panier.forEach((item, idx) => {
-subtotal += item.price;
-itemsList.innerHTML += `
-<div class="panier-item">
-<div class="item-details">
-<h3>${item.name}</h3>
-<p>${item.price.toFixed(2)} €</p>
-</div>
-<button class="btn-supprimer" onclick="supprimerItem(${idx})">Supprimer</button>
-</div>
-`;
-});
-
-let total = subtotal + 5;
-document.getElementById('subtotal').textContent = subtotal.toFixed(2) + ' €';
-document.getElementById('total').textContent = total.toFixed(2) + ' €';
-document.getElementById('btn-total').textContent = total.toFixed(2) + ' €';
-}
-
-// Supprimer item
 function supprimerItem(idx) {
-panier.splice(idx, 1);
-localStorage.setItem('panier', JSON.stringify(panier));
+  panier.splice(idx, 1);
+  localStorage.setItem('panier', JSON.stringify(panier));
+  if (clientSecret) { // panier modifié après PaymentIntent → repartir
+    clientSecret = null;
+    document.getElementById('payment-section').style.display = 'none';
+    document.getElementById('continue-btn').style.display = 'block';
+  }
+  afficherPanier();
+}
+
+function escapeHtml(str) {
+  return String(str).replace(/[&<>"']/g, (c) => ({ '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;' }[c]));
+}
+
+function afficherErreur(msg) {
+  const el = document.getElementById('error-msg');
+  el.textContent = msg;
+  el.style.display = 'block';
+}
+
+function masquerErreur() {
+  document.getElementById('error-msg').style.display = 'none';
+}
+
+async function continuerVersPaiement() {
+  masquerErreur();
+  if (!stripe) {
+    afficherErreur("Paiement indisponible (configuration manquante).");
+    return;
+  }
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const address = document.getElementById('address').value.trim();
+  if (!name || !email || !phone || !address) {
+    afficherErreur("Tous les champs sont obligatoires.");
+    return;
+  }
+  if (panier.length === 0) {
+    afficherErreur("Votre panier est vide.");
+    return;
+  }
+  const btn = document.getElementById('continue-btn');
+  btn.disabled = true;
+  btn.textContent = "Préparation du paiement…";
+  try {
+    const res = await fetch('/api/create-payment-intent', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ items: panier, name, email, phone, address }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.error || 'Erreur paiement');
+    clientSecret = data.clientSecret;
+
+    elementsInstance = stripe.elements({
+      clientSecret,
+      appearance: {
+        theme: 'stripe',
+        variables: { colorPrimary: '#c8607a', borderRadius: '8px', fontFamily: 'DM Sans, sans-serif' },
+      },
+    });
+    paymentElement = elementsInstance.create('payment', {
+      layout: 'tabs',
+      terms: { card: 'never', sepaDebit: 'never', usBankAccount: 'never', bancontact: 'never', ideal: 'never', sofort: 'never' },
+    });
+    paymentElement.mount('#payment-element');
+    document.getElementById('payment-section').style.display = 'block';
+    btn.style.display = 'none';
+  } catch (err) {
+    afficherErreur(err.message || 'Erreur paiement');
+    btn.disabled = false;
+    btn.innerHTML = 'Continuer vers le paiement · <span id="btn-total-cont">' + (panier.reduce((s,i)=>s+i.price,0)+5).toFixed(2) + ' €</span>';
+  }
+}
+
+async function confirmerPaiement() {
+  if (!stripe || !elementsInstance) return;
+  masquerErreur();
+  const btn = document.getElementById('confirm-btn');
+  btn.disabled = true;
+  btn.textContent = 'Traitement…';
+  const result = await stripe.confirmPayment({
+    elements: elementsInstance,
+    confirmParams: { return_url: window.location.origin + '/merci.html' },
+    redirect: 'if_required',
+  });
+  if (result.error) {
+    afficherErreur(result.error.message || 'Paiement refusé');
+    btn.disabled = false;
+    btn.innerHTML = 'Valider et payer · <span id="btn-total">' + (panier.reduce((s,i)=>s+i.price,0)+5).toFixed(2) + ' €</span>';
+    return;
+  }
+  if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
+    panier = [];
+    localStorage.removeItem('panier');
+    window.location.href = '/merci.html';
+  }
+}
+
 afficherPanier();
-}
-
-// Traiter paiement
-async function traiterPaiement() {
-let name = document.getElementById('name').value;
-let email = document.getElementById('email').value;
-let phone = document.getElementById('phone').value;
-let address = document.getElementById('address').value;
-
-if (!name || !email || !phone || !address) {
-alert('Tous les champs sont obligatoires');
-return;
-}
-
-if (panier.length === 0) {
-alert('Votre panier est vide');
-return;
-}
-
-document.getElementById('checkout-btn').disabled = true;
-
-const {token} = await stripe.createToken(cardElement);
-
-if (token) {
-document.getElementById('success-msg').style.display = 'block';
-panier = [];
-localStorage.removeItem('panier');
-afficherPanier();
-} else {
-alert('Erreur paiement');
-document.getElementById('checkout-btn').disabled = false;
-}
-}
-
-// Init
-afficherPanier();
-
-// Écouter les changements du localStorage (autre onglet/fenêtre)
 window.addEventListener('storage', () => {
-panier = JSON.parse(localStorage.getItem('panier')) || [];
-afficherPanier();
+  panier = JSON.parse(localStorage.getItem('panier')) || [];
+  afficherPanier();
 });
 </script>
 
